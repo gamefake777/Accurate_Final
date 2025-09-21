@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurate Background</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body id="main-body">
+
+    <header>
+        <h1>Accurate Background</h1>
+        <nav class="dashboard-nav">
+            <button id="dashboard-btn" class="dashboard-toggle">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <h2 id="user-greeting">Hey User, How can I help you?</h2>
+            <div class="input-wrapper">
+                <input type="text" id="search-bar" placeholder="Ask anything about your data...">
+                <i class="fas fa-microphone" id="voice-btn"></i>
+            </div>
+        </div>
+
+        <div class="quick-filters">
+            <button data-status="Active" class="">Active</button>
+            <button data-status="PENDING">Pending</button>
+            <button data-status="COMPLETED">Completed</button>
+            <button data-status="IN ADJUDICATION">Needs Review</button>
+        </div>
+
+        <div id="content-area">
+            <div class="welcome-message">
+                <h2>Welcome to Iris</h2>
+                <p>Your data insights will appear here. Get started by using the search bar above.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="dashboard-page hidden">
+        <div class="dashboard-header">
+            <h2>Database Tables Dashboard</h2>
+            <button id="back-to-main" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Main
+            </button>
+        </div>
+        
+        <div class="dashboard-content">
+            <div class="table-buttons-grid">
+                <button class="table-btn" data-table="Search_status">
+                    <i class="fas fa-search"></i>
+                    <span>Search_status</span>
+                </button>
+                <button class="table-btn" data-table="Search Table">
+                    <i class="fas fa-table"></i>
+                    <span>Search Table</span>
+                </button>
+                <button class="table-btn" data-table="Search_Type Table">
+                    <i class="fas fa-list-alt"></i>
+                    <span>Search_Type Table</span>
+                </button>
+                <button class="table-btn" data-table="Subject Table">
+                    <i class="fas fa-tag"></i>
+                    <span>Subject Table</span>
+                </button>
+                <button class="table-btn" data-table="Company Table">
+                    <i class="fas fa-building"></i>
+                    <span>Company Table</span>
+                </button>
+                <button class="table-btn" data-table="Package Table">
+                    <i class="fas fa-box"></i>
+                    <span>Package Table</span>
+                </button>
+                <button class="table-btn" data-table="Order_Request Table">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Order_Request Table</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="live-counts-footer">
+        <div class="metric-card">
+            <i class="fas fa-users"></i>
+            <div class="metric-info">
+                <div class="metric-number-wrapper">
+                    <span class="count-number" data-target="16000">0</span>+
+                </div>
+                <p>Customers Worldwide</p>
+            </div>
+        </div>
+        <div class="metric-card">
+            <i class="fas fa-hourglass-half"></i>
+            <div class="metric-info">
+                <div class="metric-number-wrapper">
+                    <span class="count-number" data-target="48">0</span>
+                </div>
+                <p>Avg. TAT (Hours)</p>
+            </div>
+        </div>
+        <div class="metric-card">
+            <i class="fas fa-globe-americas"></i>
+            <div class="metric-info">
+                <div class="metric-number-wrapper">
+                    <span class="count-number" data-target="195">0</span>+
+                </div>
+                <p>Countries Served</p>
+            </div>
+        </div>
+        <div class="metric-card">
+            <i class="fas fa-database"></i>
+            <div class="metric-info">
+                <div class="metric-number-wrapper">
+                    <span class="count-number" data-target="900000">0</span>+
+                </div>
+                <p>Data Points Verified</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

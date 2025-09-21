@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Frontend Test Page</h1>
+    
+    <div class="test-section">
+        <h3>Test 1: Server Connection</h3>
+        <button onclick="testServerConnection()">Test Server</button>
+        <div id="server-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test 2: RAG Query</h3>
+        <input type="text" id="test-query" placeholder="Enter test query" value="How many records are there?">
+        <button onclick="testRAGQuery()">Test RAG</button>
+        <div id="rag-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test 3: Chart Generation</h3>
+        <input type="text" id="chart-query" placeholder="Enter chart query" value="Create a bar chart of order status">
+        <button onclick="testChartQuery()">Test Chart</button>
+        <div id="chart-result"></div>
+    </div>
+
+    <script>
+        async function testServerConnection() {
+            const resultDiv = document.getElementById('server-result');
+            try {
+                const response = await fetch('/api/tables');
+                const data = await response.json();
+                resultDiv.innerHTML = `<div class="success">✅ Server connected! Available tables: ${data.tables.join(', ')}</div>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Server error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testRAGQuery() {
+            const query = document.getElementById('test-query').value;
+            const resultDiv = document.getElementById('rag-result');
+            try {
+                const response = await fetch('/api/rag-query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `<div class="success">✅ RAG Query successful! Type: ${data.type}, Message: ${data.message}</div>`;
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ RAG Query error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testChartQuery() {
+            const query = document.getElementById('chart-query').value;
+            const resultDiv = document.getElementById('chart-result');
+            try {
+                const response = await fetch('/api/rag-query', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query })
+                });
+                const data = await response.json();
+                if (data.type === 'chart') {
+                    resultDiv.innerHTML = `<div class="success">✅ Chart generated! Type: ${data.chart_type}, Labels: ${data.labels.length}, Data points: ${data.data.length}</div>`;
+                } else {
+                    resultDiv.innerHTML = `<div class="error">❌ Expected chart, got: ${data.type}</div>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<div class="error">❌ Chart Query error: ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

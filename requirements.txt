@@ -1,0 +1,11 @@
+Flask==2.3.3
+python-dotenv==1.0.0
+requests==2.31.0
+Werkzeug==2.3.7
+flask-cors==4.0.0
+pandas==2.0.3
+chromadb==0.4.15
+supabase==1.0.4
+matplotlib==3.7.2
+seaborn==0.12.2
+kaleido==0.2.1
